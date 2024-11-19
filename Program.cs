@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SearchEngine;
+using System.Windows.Forms;
 
 namespace SearchEngine
 
@@ -21,23 +22,29 @@ namespace SearchEngine
 
 
       
+        //static void Main(string[] args)
+        //{
+        //    //im here
+
+        //    // Current working directory
+        //    string currentDir = Directory.GetCurrentDirectory();
+        //    var sourceDirPath = Directory.GetCurrentDirectory() + @"\data\search-data-M.txt";
+
+        //    var program = new Program(sourceDirPath);
+
+
+        //    program._levenshtein = new Levenstein(program._searchIndex.DataSet);
+        //    program.UserInput();
+
+
+        //}
+
         static void Main(string[] args)
         {
-            //im here
-
-            // Current working directory
-            string currentDir = Directory.GetCurrentDirectory();
-            var sourceDirPath = Directory.GetCurrentDirectory() + @"\data\search-data-M.txt";
-
-            var program = new Program(sourceDirPath);
-
-
-            program._levenshtein = new Levenstein(program._searchIndex.DataSet);
-            program.UserInput();
-
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new SearchForm());
         }
-
 
         public Program(string path)
         {
@@ -158,6 +165,8 @@ namespace SearchEngine
             }
         }
     }
+
+
 
 
 
