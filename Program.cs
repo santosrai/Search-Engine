@@ -10,12 +10,12 @@ using System.Windows.Forms;
 namespace SearchEngine
 
 {
-    public interface ISearchService
-    {
-        IEnumerable<SearchData> FindWord(string input);
-    }
+    //public interface ISearchService
+    //{
+    //    IEnumerable<SearchData> FindWord(string input);
+    //}
 
-    internal class Program : ISearchService
+    internal class Program 
     {
         private SearchIndex _searchIndex;
         private Levenstein _levenshtein;
@@ -46,7 +46,7 @@ namespace SearchEngine
             Application.Run(new SearchForm());
         }
 
-        public Program(string path)
+       /* public Program(string path)
         {
             CreateDataStructure(path);
             if (_searchIndex != null)
@@ -124,7 +124,7 @@ namespace SearchEngine
                             Word = data.Word,
                             Title = data.Title,
                             Url = data.Url,
-                            Distance = word.Value,
+                           // Distance = word.Value,
                             Frequency = data.Frequency
                         };
                         searchData.Add(item);
@@ -164,6 +164,8 @@ namespace SearchEngine
                 Console.WriteLine();
             }
         }
+    
+    */
     }
 
 
