@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using System.Configuration;
 
 namespace SearchEngine
 {
@@ -55,11 +55,16 @@ namespace SearchEngine
             string apiKey = apiKeyTextBox.Text.Trim();
             if (!string.IsNullOrEmpty(apiKey))
             {
-                // Save the API key (for example, in a config file)
-                //Properties.Settings.Default.ApiKey = apiKey; // Assuming you have a setting named ApiKey
-                //Properties.Settings.Default.Save(); // Save settings
+                
+                // Save the API key
+                Properties.Settings.Default.ApiKey = apiKey;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
+
                 MessageBox.Show("API Key saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close(); // Close the settings form
+           
+            
             }
             else
             {
